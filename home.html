@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>全名钢铁</title>
+    <title>全民钢铁</title>
     <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" href="css/jquery.fullPage.css">
     <link rel="stylesheet" type="text/css" href="css/home.css">
@@ -22,7 +22,7 @@
                     $(".section3 .willUpE").each(function(index,key){
                         $(key).removeClass("up");
                         setTimeout(function(){
-                            $(key).removeClass("down").addClass("up");
+                            $(key).addClass("up");
                         },index*100);
                     });
                 }
@@ -45,7 +45,7 @@
                     },500)
                 }
                 if (index == '3') {
-                    $(".section3 .willUpE").removeClass("up").addClass("down");
+                    $(".section3 .willUpE").removeClass("up");
                 }
                 if (index == '4') {
                     setTimeout(function(){
@@ -61,7 +61,7 @@
         });
         
 
-        $("#nextPage").on("click", function() {
+        $(".nextPage").on("click", function() {
             $.fn.fullpage.moveSectionDown();
         });
 
@@ -107,8 +107,8 @@
                     </div>
                 </div>
             </div>
-            <div class="section1-bottom">
-                <a href="javascript:void(0)" id="nextPage"></a>
+            <div class="section-bottom">
+                <a href="javascript:void(0)" class="nextPage"></a>
             </div>
         </div>
         <!-- 第二页 -->
@@ -120,6 +120,9 @@
                 <p>平台为进驻钢厂提供钢企客户端，让钢厂直接面向市场操盘。</p>
                 <p>平台上所有的不锈钢产品销售价格均由钢厂实时报价、接单，价格更公正、透明。</p>
                 <p>为钢厂与用户提供信息交流的稳定平台，促成订单交易，架接钢厂和用户之间的直通“桥梁”。</p>
+            </div>
+            <div class="section-bottom">
+                <a href="javascript:void(0)" class="nextPage"></a>
             </div>
         </div>
         <!-- 第三页 -->
@@ -147,7 +150,11 @@
                     <p class="willUpE">捷的物流运输，一站式服务为订单交易提供稳定保障</p>
                 </div>
             </div>
+            <div class="section-bottom">
+                <a href="javascript:void(0)" style="background-image: url(img/down03.png)" class="nextPage"></a>
+            </div>
         </div>
+        
         <!-- 第四页 -->
         <div class="section section4">
             <div class="section4-right">
@@ -160,7 +167,11 @@
                     <p>传统业务员华丽变身不锈钢互联网交易服务弄潮儿。</p>
                 </div>
             </div>
+            <div class="section-bottom">
+                <a href="javascript:void(0)" class="nextPage"></a>
+            </div>
         </div>
+        
         <!-- 第五页 -->
         <div class="section section5">
             <div class="section5-middle">
