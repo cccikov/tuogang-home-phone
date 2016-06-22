@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>全名钢铁</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script>
+    $(function() {
+        $('#dowebok').fullpage({
+            afterLoad: function(anchorLink, index) {
+                if (index == 2) {
+                    $(".section2-middle").addClass("animated bounceInLeft");
+                }
+                if (index == 3) {
+                    $(".section3 .willUpE").each(function(index,key){
+                        $(key).removeClass("up");
+                        setTimeout(function(){
+                            $(key).removeClass("down").addClass("up");
+                        },index*100);
+                    });
+                }
+                if (index == 4) {
+                   $(".section4-right").addClass("animated flash");
+                }
+                if(index==5){
+                    $(".section5 .zoomE").each(function(index,key){
+                        setTimeout(function(){
+                            $(key).addClass("zoomIn animated");
+                        },index*150);
+                    });
+                }
+              
+            },
+            onLeave: function(index, direction) {
+                if (index == '2') {
+                    setTimeout(function(){
+                        $(".section2-middle").removeClass("animated bounceInLeft");
+                    },500)
+                }
+                if (index == '3') {
+                    $(".section3 .willUpE").removeClass("up").addClass("down");
+                }
+                if (index == '4') {
+                    setTimeout(function(){
+                        $(".section4-right").removeClass("animated flash");
+                    },500)
+                }
+                if(index==5){
+                    setTimeout(function(){
+                        $(".section5 .zoomE").removeClass("zoomIn animated");
+                    },500)
+                }
+            }
+        });
+        
+
+        $("#nextPage").on("click", function() {
+            $.fn.fullpage.moveSectionDown();
+        });
+
+        $(".toLogin").on("click", function() {
+            $(".mid-text").hide().siblings(".mid-login").show();
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div id="dowebok">
+        <!-- 第一页 -->
+        <div class="section section1">
+            <div class="section1-top">
+                <img src="img/logo.png">
+                <p>不锈钢互联网交易服务平台</p>
+                <a href="javascript:void(0)">帮助中心</a>
+            </div>
+            <div class="section1-middle">
+                <div class="mid-text">
+                    <p>以视界，丈量世界尺度，开拓广阔未来</p>
+                    <div class="text-btn-wrap">
+                        <a href="javascript:void(0)" class="toLogin">注册</a>
+                        <a href="javascript:void(0)" class="toLogin">登陆</a>
+                    </div>
+                </div>
+                <!-- 中部 -->
+                <div class="mid-login">
+                    <p class="login-part">你好，欢迎来到全民钢铁</p>
+                    <div class="login-part">
+                        <input type="text" name="" placeholder="账户">
+                    </div>
+                    <div class="login-part">
+                        <input type="password" name="" placeholder="密码">
+                    </div>
+                    <div class="login-btn-wrap clearfix">
+                        <a href="javascript:void(0)" id="reg">注册</a>
+                        <a href="javascript:void(0)" id="log">登录</a>
+                    </div>
+                    <div class="fgp">
+                        <a href="javascript:void(0)">忘记密码</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section1-bottom">
+                <a href="javascript:void(0)" id="nextPage"></a>
+            </div>
+        </div>
+        <!-- 第二页 -->
+        <div class="section section2">
+            <div class="section2-middle">
+                <h2>平台介绍</h2>
+                <p>全民钢铁是由佛山拓港信息技术有限公司运营的互联网第三方不锈钢直销平台。</p>
+                <p>提供在线采购、支付、仓储、物流等一体化电子商务交易服务，让您拥有高速快捷的购货体验。</p>
+                <p>平台为进驻钢厂提供钢企客户端，让钢厂直接面向市场操盘。</p>
+                <p>平台上所有的不锈钢产品销售价格均由钢厂实时报价、接单，价格更公正、透明。</p>
+                <p>为钢厂与用户提供信息交流的稳定平台，促成订单交易，架接钢厂和用户之间的直通“桥梁”。</p>
+            </div>
+        </div>
+        <!-- 第三页 -->
+        <div class="section section3">
+            <h2>平台特色</h2>
+            <div class="section3-wrap">
+                <div class="item item1">
+                    <i class="willUpE"></i>
+                    <h5 class="willUpE">在线采购</h5>
+                    <p class="willUpE">平台进驻钢厂直接提供丰富优质的钢材资源，并直接报价、接单。</p>
+                </div>
+                <div class="item item2">
+                    <i class="willUpE"></i>
+                    <h5 class="willUpE">自营仓储</h5>
+                    <p class="willUpE">平台为货物提供仓储服务，供用户提货交收</p>
+                </div>
+                <div class="item item3">
+                    <i class="willUpE"></i>
+                    <h5 class="willUpE">支付审核</h5>
+                    <p class="willUpE">用户通过银行渠道支付，平台不直接接触支付环节，保证资金流动安全可靠。</p>
+                </div>
+                <div class="item item4">
+                    <i class="willUpE"></i>
+                    <h5 class="willUpE">快速物流</h5>
+                    <p class="willUpE">捷的物流运输，一站式服务为订单交易提供稳定保障</p>
+                </div>
+            </div>
+        </div>
+        <!-- 第四页 -->
+        <div class="section section4">
+            <div class="section4-right">
+                <div class="section4-wrap">
+                    <h5>期货、现 货、团购</h5>
+                    <p class="section4-mar">货物资源完整全面，新鲜有趣的多元化购物体验。</p>
+                    <h5 class="section4-mar">个人即可注册会员</h5>
+                    <p class="section4-mar">一分努力双倍回报，创新规则增添生活鲜亮色彩。</p>
+                    <h5 class="section4-mar">成长值规则、消费积分抵扣货款</h5>
+                    <p>传统业务员华丽变身不锈钢互联网交易服务弄潮儿。</p>
+                </div>
+            </div>
+        </div>
+        <!-- 第五页 -->
+        <div class="section section5">
+            <div class="section5-middle">
+                <h2 class="zoomE">现在，就开始使用全民钢铁</h2>
+                <img class="zoomE" src="img/mockup.png">
+                <div class="zoomE">
+                    <a href="javascript:void(0)">立即注册</a>
+                </div>
+            </div>
+            <div class="section5-bottom">
+                <a href="javascript:void(0)" class="ver">免责声明</a>
+                <a href="javascript:void(0)" class="ver">隐私条款</a>
+                <a href="javascript:void(0)" class="ver">联系我们</a>
+                <a href="javascript:void(0)">帮助中心</a>
+                <span>Copyright © 2014-2016 粤ICP备15109338号 佛山拓港信息技术有限公司 版权所有 侵权必究</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
